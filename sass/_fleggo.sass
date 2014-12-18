@@ -1,0 +1,66 @@
+/* Fleggo - Responsive flexbox based grid system
+  This system is deisgned to be used two ways:
+  1) You can use the classes .row and .column-# in your HTML
+  2) You can use the placeholders %row and %column-# in your CSS
+  The advantadge of using the placeholder method is yu can assign different
+  column widths based on media queries.
+  The demo uses the class method
+
+
+/* Fleggo configuration:
+  $gutter is set in pixels and factored for 1/2 of the gutter width. This is the
+  amount of margin each column block will get.
+  $maxWidth is an arbitrary number I picked, but changing it will affect the
+  width of your gutters if you don't adjust them either.
+  $columns is the max number of columns.
+  All values end up  as percentages
+  $mobileBreak is where the flexboc direction changes from rows to column for
+  mobile devices.
+
+$mobileBreak: 640px
+$maxWidth: 960
+$columns: 12
+$gutter: 8
+
+/* Fleggo helper functions
+@function columnWidth($columnCount)
+  @if $columnCount == $columns
+    @return 100% 
+    /* we don't want gutters anywhere in this */
+  @if $columnCount == 4
+    @return 32.25% 
+    /* yes this is hardcoded, it is the best value based on my experimentation. 
+      This will change if you change the config. */
+  @else 
+    @return (((($maxWidth / $columns) * $columnCount) - $gutter) / $maxWidth) * 100%
+
+@function gutters($columnCount)
+  @if $columnCount == $columns
+    @return 0
+  @else
+    @return ($gutter/$maxWidth) * 100%
+
+.row, %row
+  display: flex
+  margin: .5rem auto
+  flex-direction: column
+  justify-content: center 
+  @media screen and (min-width: $mobileBreak) 
+    flex-direction: row
+
+@for $x from 1 through $columns
+  .column-#{$x}, %column-#{$x}
+    flex-grow: #{$x} 
+    flex-shrink: 0 
+    flex-basis: columnWidth($x)
+    margin: 0 gutters($x) 
+[class*="column-"] /* Nesting grids */
+  & > *:not(.row) 
+    margin: 
+      top: 1rem
+      bottom: 1rem
+  & .row, & %row
+    margin: 0
+    justify-content: space-around
+
+
