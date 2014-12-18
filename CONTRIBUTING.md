@@ -2,12 +2,17 @@
 
 Here are a couple things I ask:
 
-- File an issue first so we can discuss what you think needs to happen.
-- Once the action plan and debate is over, file the PR noting the Issue #
 - Be nice. I made Fleggo for something I need, and thought others can use it. If
   I or any other contributor feels harrassed, I will just close it off.
 - This is my project. I will debate fiercely, but compromise accordingly.
   Ultimately thought, it is my decision if I accept a PR.
+
+## Contributing process
+- File an issue first so we can discuss what you think needs to happen.
+- Once the action plan and debate is over...
+- Create a branch for your change. 
+- File the PR noting the Issue #
+- Please use semantic versioning. 
 
 ## Todos
 
