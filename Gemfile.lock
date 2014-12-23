@@ -21,7 +21,7 @@ GEM
       sass (~> 3.2)
     hike (1.2.3)
     hitimes (1.2.2)
-    jekyll (2.5.2)
+    jekyll (2.5.3)
       classifier-reborn (~> 2.0)
       colorator (~> 0.1)
       jekyll-coffeescript (~> 1.0)
@@ -96,4 +96,5 @@ DEPENDENCIES
   font-awesome-sass
   jekyll
   jekyll-assets
+  liquid
   sass
