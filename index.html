@@ -8,6 +8,63 @@ layout: default
   
     </div>
   </div>
+  <div class="row block">
+    <div class="column-8">
+    <h2>Fleggo is my attempt at building a better grid system.</h2>
+    <p>For years I have hated grids. They seem to always cause more problems
+    than they solve. I would avoid them at all costs. Recently though I began to
+    learn to love them, but every system I encountered had an issue in one way
+    or another. I'm trying to solve that now.</p>
+    <h3>Flexbox</h3>
+    <p>Fleggo uses flexbox because it is a beutiful tool for forward thinking
+    sites. I don't support anything older than one version below the current, so
+    I don't worry about older versions of Internet Explorer. However, I think
+    the way I envision Fleggo, it will work on older versions of browsers in a
+    non-flexbox manner.</p>
+    <h3>Naming Things</h3>
+    <p>Most grid systems use classes like <code>.row</code> and
+    <code>.column-1</code>, and with fleggo that's exactly what you do. But
+    there is more.
+    <h4>Rows</h4>
+    <p>Using flexbox actually means we don't need to define rows. The wrapping
+    on flexbox will create them for us depeind on the width of the container.
+    Fleggo has rows so that you can make sure all your items in a row are the
+    same height.</p>
+    <h4>Columns</h4>
+    <p>Columns are at the core of any grid system. Fleggo is based on a 12
+    column grid and is flexible. While the initial config is based on a 960px
+    width, columns are percentages, so you can use them regardless of the width
+    of the container.</p>
+    <p>Since this is Flexbox, there is also a special column class,
+    <code>.column-0</code>. This uses <code>flex: 0 0 auto</code> so that it can
+    consume as much room as needed in a row and wrap accordingly per the flexbox
+    spec.</p>
+    <h3>Don't dirty my HTML, aka Separation of Concerns</h3>
+    <p>One of my biggest complaints about grids though is the lack of semantics.
+    I like my HTML to have classes describing the content. I find littering rows
+    and columns in my HTML as ugly. I prefer the layout to be in the CSS and the
+    CSS only.</p>
+    <p>This is why I built Fleggo with the ability to do just that. Yes, you can
+    use the classes if that is your preference, but if you are like me, you can
+    extend the row and column placeholders inside your classes for the same
+    effect.<p>
+{% highlight sass %}
+.hero
+  @extend %row
+.hero__title
+  @extend %column-8
+.hero__login
+  @extend %column-4
+{% endhighlight %}
+    <p>This achieved the same effect of adding the <code>.row</code> class to
+    the <code>.hero</code> block and the matching </code>.column-*</code>
+classes to the child elements.</p>
+    </div>
+    <aside class="column-4">
+      <blockquote><p>Fleggo lets you choose the way you want to do your grid
+        markup.<p></blockquote>
+    </aside>
+  </div>
   <div class="demo block">
 
     <h2>Grid</h2>
@@ -45,7 +102,7 @@ layout: default
       <div class="column-4"><p>4 columns</p></div>
     </div>
   </div>
-  <div class="block--full">
+  <div class="block--full demo">
     <h3>Standard - .row</h3>
     <div class="row">
       <div class="column-12"><p>12 columns</p></div>
@@ -81,7 +138,7 @@ layout: default
     </div>
   </div>
   <div class="block">
-    <div class="row">
+    <div class="row demo">
       <div class="column-8">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dui nisi,
         hendrerit non fermentum vel, accumsan sed felis. Proin feugiat velit vitae
@@ -121,7 +178,7 @@ layout: default
     <div class="row">
       <h2>Nested Grid</h2>
     </div>
-    <div class="row">
+    <div class="row demo">
       <div class="column-8">
         <div class="row">
           <div class="column-4">
