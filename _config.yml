@@ -37,9 +37,9 @@ assets:
   #     css  => 'yui', 'sass', nil
   #     js   => 'yui', 'uglifier', nil
   #
-  compress:
-    js:   uglifier
-    css:  sass
+  #compress:
+  #  js:   uglifier
+  #  css:  sass
   # Sets cachebusting policy for generated assets.
   #
   # Possible variants:
@@ -63,7 +63,7 @@ assets:
   #     output file:  _site/assets/javascriptis/app-4f41243847da693a4f356c0486114bc6.css
   #     output URL:   /assets/javascripts/app-4f41243847da693a4f356c0486114bc6.css
   #
-  cachebust: hard
+  cachebust: none
   #
   # Whenever or not cache compiled assets (disabled by default).
   # See `Compilation Cache` section of README for details.
