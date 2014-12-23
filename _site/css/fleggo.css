@@ -1,28 +1,20 @@
-html {
-  box-sizing: border-box; }
-
-body {
-  font-family: "Open Sans", "Avenir", "Helvetica", sans-serif;
-  padding: 0;
-  margin: 0; }
-
-*, *:before, *:after {
-  box-sizing: inherit; }
-
-.block {
-  max-width: 960px;
-  min-width: 300px;
-  margin: 0 auto;
-  text-align: center; }
-
-.block--full {
-  max-width: 100%; }
-
-.demo [class*="column-"] {
-  background: #ccc; }
-  .demo [class*="column-"] .row [class*="column-"] {
-    background: #f2f2f2; }
-
+/* Fleggo - Responsive flexbox based grid system
+ * This system is deisgned to be used two ways:
+ * 1) You can use the classes .row and .column-# in your HTML
+ * 2) You can use the placeholders %row and %column-# in your CSS
+ * The advantadge of using the placeholder method is yu can assign different
+ * column widths based on media queries.
+ * The demo uses the class method */
+/* Fleggo configuration:
+ * $gutter is set in pixels and factored for 1/2 of the gutter width. This is the
+ * amount of margin each column block will get.
+ * $maxWidth is an arbitrary number I picked, but changing it will affect the
+ * width of your gutters if you don't adjust them either.
+ * $columns is the max number of columns.
+ * All values end up  as percentages
+ * $mobileBreak is where the flexboc direction changes from rows to column for
+ * mobile devices. */
+/* Fleggo helper functions */
 .row {
   display: flex;
   margin: 0.5rem auto;
@@ -111,4 +103,3 @@ body {
   margin: 0;
   justify-content: space-around; }
 
-/*# sourceMappingURL=demo.css.map */

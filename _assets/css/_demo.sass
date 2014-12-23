@@ -1,0 +1,119 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300)
+/* colors */
+$yellow: #ffe846
+$red: #cd3021
+$blue: #076ce2
+$green: #467e25
+$white: #F7FBFA
+$placeholder: #ccc
+$black: #333
+
+@function shade($color)
+  @return darken($color, 15%)
+@function bright($color)
+  @return lighten($color, 15%)
+
+
+html
+  box-sizing: border-box
+body
+  font-family: 'Open Sans', 'Avenir', 'Helvetica', sans-serif
+  padding: 0
+  margin: 0
+*, *:before, *:after
+  box-sizing: inherit
+.block
+  max-width: 960px
+  min-width: 300px
+  margin: 0 auto
+.block--full
+  max-width: 100%
+.demo
+  [class*="column-"]
+    background: $placeholder
+    padding: 0 8px
+    .row
+      [class*="column-"]
+        background: lighten($placeholder,15%)
+.site-header
+  @extend %row
+  position: fixed
+  z-index: 10
+  background: $red
+  box-shadow: 0px 1px 3px $black
+  width: 100%
+  padding: 16px
+  top: -8px
+  align-items: baseline 
+  color: $white
+  a
+    color: $white
+    &:hover, &:focus
+      color: $yellow
+.logo, .project
+  @extend %column-6
+  padding: 8px 16px
+.logo
+  text-decoration: none
+  font-size: 2em
+.project
+  text-align: right
+.hero
+  @extend %row
+  text-align: center
+  background:
+    image: url('/images/bricks.jpg')
+    size: 110% 52vh 
+    position: center center
+  height: 50vh
+  color: $white
+  position: relative
+  align-items: center
+  margin: 0 auto
+  &:before
+    background:
+      image: url('/images/bricks.jpg')
+      size: cover
+      position: center center
+    content: ""
+    -webkit-filter: blur(10px)
+    height: 52vh
+    width: 110%
+    position: absolute
+    top: 0px
+    left: 0
+    z-index: 1
+    -webkit-clip-path: inset(14px 0px 14px 0px)
+  h1, h2
+    color: $white
+  h1
+    font:
+      weight: 300
+      size: 7rem
+    margin:
+      bottom: 4px
+  h2
+    margin:
+      top: 0
+    font:
+      size: 2em
+.content
+  @extend %column-12
+  position: relative
+  z-index: 2
+  text-shadow: 1px 1px 3px rgba(0,0,0,.7)
+aside
+  blockquote
+    background: bright($blue)
+    color: $white
+    font:
+      size: 2em
+    padding: 1rem
+    border:
+      radius: 4px
+h2
+  color: $red
+h3
+  color: $green
+h4
+  color: $blue

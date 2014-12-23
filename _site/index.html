@@ -1,7 +1,33 @@
----
-layout: default
----
-  <div class="hero">
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+
+  <title>Fleggo | Responsive Flexbox Grid System</title>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="canonical" href="http://yourdomain.com/">
+  <link rel="alternate" type="application/atom+xml" title="Fleggo | Responsive Flexbox Grid System" href="http://yourdomain.com/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+  <a href="/" class="logo">Fleggo</a>
+  <div class="project"><a href="https://github.com/gtarnoff/Fleggo">Github</a> |
+    <a href="https://raw.githubusercontent.com/gtarnoff/Fleggo/master/LICENSE">MIT License</a>
+  </div>
+</header>
+
+
+          <div class="hero">
     <div class="content">
       <h1>Fleggo</h1>
       <h2>Responsive Flexbox Grid System</h2>
@@ -48,14 +74,12 @@ layout: default
     use the classes if that is your preference, but if you are like me, you can
     extend the row and column placeholders inside your classes for the same
     effect.<p>
-{% highlight sass %}
-.hero
-  @extend %row
-.hero__title
-  @extend %column-8
-.hero__login
-  @extend %column-4
-{% endhighlight %}
+<div class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="nc">.hero</span>
+  <span class="k">@extend</span> <span class="err">%</span><span class="nt">row</span>
+<span class="nc">.hero__title</span>
+  <span class="k">@extend</span> <span class="err">%</span><span class="nt">column-8</span>
+<span class="nc">.hero__login</span>
+  <span class="k">@extend</span> <span class="err">%</span><span class="nt">column-4</span></code></pre></div>
     <p>This achieved the same effect of adding the <code>.row</code> class to
     the <code>.hero</code> block and the matching </code>.column-*</code>
 classes to the child elements.</p>
@@ -227,3 +251,9 @@ classes to the child elements.</p>
   </div>
 </div>      
 </div>
+
+
+
+  </body>
+
+</html>
