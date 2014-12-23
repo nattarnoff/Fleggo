@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+
+  <title>Fleggo | Responsive Flexbox Grid System</title>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+  <link rel="stylesheet" href="/Fleggo/assets/style.css">
+  <link rel="canonical" href="http://gtarnoff/github.io/Fleggo//">
+  <link rel="alternate" type="application/atom+xml" title="Fleggo | Responsive Flexbox Grid System" href="http://gtarnoff/github.io/Fleggo//feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+  <a href="/" class="logo">Fleggo</a>
+  <div class="project"><a href="https://github.com/gtarnoff/Fleggo">Github</a> |
+    <a href="https://raw.githubusercontent.com/gtarnoff/Fleggo/master/LICENSE">MIT License</a>
+  </div>
+</header>
+
+
+          <div class="hero">
+    <div class="content">
+      <h1>Fleggo</h1>
+      <h2>Responsive Flexbox Grid System</h2>
+  
+    </div>
+  </div>
+  <div class="row block">
+    <div class="column-8">
+    <h2>Fleggo is my attempt at building a better grid system.</h2>
+    <p>For years I have hated grids. They seem to always cause more problems
+    than they solve. I would avoid them at all costs. Recently though I began to
+    learn to love them, but every system I encountered had an issue in one way
+    or another. I'm trying to solve that now.</p>
+    <h3>Flexbox</h3>
+    <p>Fleggo uses flexbox because it is a beutiful tool for forward thinking
+    sites. I don't support anything older than one version below the current, so
+    I don't worry about older versions of Internet Explorer. However, I think
+    the way I envision Fleggo, it will work on older versions of browsers in a
+    non-flexbox manner.</p>
+    <h3>Naming Things</h3>
+    <p>Most grid systems use classes like <code>.row</code> and
+    <code>.column-1</code>, and with fleggo that's exactly what you do. But
+    there is more.
+    <h4>Rows</h4>
+    <p>Using flexbox actually means we don't need to define rows. The wrapping
+    on flexbox will create them for us depeind on the width of the container.
+    Fleggo has rows so that you can make sure all your items in a row are the
+    same height.</p>
+    <h4>Columns</h4>
+    <p>Columns are at the core of any grid system. Fleggo is based on a 12
+    column grid and is flexible. While the initial config is based on a 960px
+    width, columns are percentages, so you can use them regardless of the width
+    of the container.</p>
+    <p>Since this is Flexbox, there is also a special column class,
+    <code>.column-0</code>. This uses <code>flex: 0 0 auto</code> so that it can
+    consume as much room as needed in a row and wrap accordingly per the flexbox
+    spec.</p>
+    <h3>Don't dirty my HTML, aka Separation of Concerns</h3>
+    <p>One of my biggest complaints about grids though is the lack of semantics.
+    I like my HTML to have classes describing the content. I find littering rows
+    and columns in my HTML as ugly. I prefer the layout to be in the CSS and the
+    CSS only.</p>
+    <p>This is why I built Fleggo with the ability to do just that. Yes, you can
+    use the classes if that is your preference, but if you are like me, you can
+    extend the row and column placeholders inside your classes for the same
+    effect.<p>
+<div class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="nc">.hero</span>
+  <span class="k">@extend</span> <span class="err">%</span><span class="nt">row</span>
+<span class="nc">.hero__title</span>
+  <span class="k">@extend</span> <span class="err">%</span><span class="nt">column-8</span>
+<span class="nc">.hero__login</span>
+  <span class="k">@extend</span> <span class="err">%</span><span class="nt">column-4</span></code></pre></div>
+    <p>This achieved the same effect of adding the <code>.row</code> class to
+    the <code>.hero</code> block and the matching </code>.column-*</code>
+classes to the child elements.</p>
+    </div>
+    <aside class="column-4">
+      <blockquote><p>Fleggo lets you choose the way you want to do your grid
+        markup.<p></blockquote>
+    </aside>
+  </div>
+  <div class="demo block">
+
+    <h2>Grid</h2>
+    <h3>Standard - .row</h3>
+    <div class="row">
+      <div class="column-12"><p>12 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-1"><p>1 columns</p></div>
+      <div class="column-11"><p>11 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-2"><p>2 columns</p></div>
+      <div class="column-10"><p>10 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-3"><p>3 columns</p></div>
+      <div class="column-9"><p>9 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-4"><p>4 columns</p></div>
+      <div class="column-8"><p>8 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-5"><p>5 columns</p></div>
+      <div class="column-7"><p>7 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-6"><p>6 columns</p></div>
+      <div class="column-6"><p>6 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-4"><p>4 columns</p></div>
+      <div class="column-4"><p>4 columns</p></div>
+      <div class="column-4"><p>4 columns</p></div>
+    </div>
+  </div>
+  <div class="block--full demo">
+    <h3>Standard - .row</h3>
+    <div class="row">
+      <div class="column-12"><p>12 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-1"><p>1 columns</p></div>
+      <div class="column-11"><p>11 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-2"><p>2 columns</p></div>
+      <div class="column-10"><p>10 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-3"><p>3 columns</p></div>
+      <div class="column-9"><p>9 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-4"><p>4 columns</p></div>
+      <div class="column-8"><p>8 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-5"><p>5 columns</p></div>
+      <div class="column-7"><p>7 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-6"><p>6 columns</p></div>
+      <div class="column-6"><p>6 columns</p></div>
+    </div>
+    <div class="row">
+      <div class="column-4"><p>4 columns</p></div>
+      <div class="column-4"><p>4 columns</p></div>
+      <div class="column-4"><p>4 columns</p></div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="row demo">
+      <div class="column-8">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dui nisi,
+        hendrerit non fermentum vel, accumsan sed felis. Proin feugiat velit vitae
+        sapien accumsan, eget malesuada felis porttitor. Nam bibendum pellentesque
+        nulla, sit amet scelerisque elit sodales sed. Fusce porta dui quis tortor
+        mollis, vitae dapibus dolor feugiat. Etiam eget posuere est. Integer
+        convallis, turpis sed consequat rhoncus, eros diam ultricies dui, eu euismod
+        purus risus in est. Sed sed magna a arcu porta cursus. Aliquam lectus
+        ligula, commodo ac accumsan eget, bibendum vitae ipsum. Donec maximus leo id
+        massa tincidunt suscipit id non odio. Curabitur eget luctus dui. Quisque
+        arcu est, imperdiet quis nisi a, feugiat posuere tellus. Aliquam erat
+        volutpat. Praesent malesuada est vel dolor viverra, eu tempus sapien
+        accumsan. Vivamus bibendum fringilla elit sed dapibus. Donec semper, ex non
+        scelerisque pulvinar, risus elit suscipit dolor, id vulputate lacus erat sit
+        amet nulla.</p>
+
+        <p>Nam aliquet mollis vehicula. Donec interdum ornare ante quis lacinia.
+        Integer ultrices neque sed ligula hendrerit porttitor. Morbi enim neque,
+        efficitur sed massa nec, facilisis molestie tortor. Aenean ultricies libero
+        eu sollicitudin ultrices. Aenean rhoncus mi in nisl mattis cursus.
+        Suspendisse viverra urna a dui mollis ultricies. Nam nec neque tellus.
+        Phasellus eleifend eu felis et blandit. Maecenas ullamcorper vehicula
+        turpis, iaculis tincidunt odio auctor et. Maecenas consequat neque lorem,
+        nec varius justo rhoncus eu.</p>
+      </div>
+      <div class="column-4">
+        <p>Nam aliquet mollis vehicula. Donec interdum ornare ante quis lacinia.
+        Integer ultrices neque sed ligula hendrerit porttitor. Morbi enim neque,
+        efficitur sed massa nec, facilisis molestie tortor. Aenean ultricies libero
+        eu sollicitudin ultrices. Aenean rhoncus mi in nisl mattis cursus.
+        Suspendisse viverra urna a dui mollis ultricies. Nam nec neque tellus.
+        Phasellus eleifend eu felis et blandit. Maecenas ullamcorper vehicula
+        turpis, iaculis tincidunt odio auctor et. Maecenas consequat neque lorem,
+        nec varius justo rhoncus eu.</p>
+      </div>
+    </div>
+    <div class="row">
+      <h2>Nested Grid</h2>
+    </div>
+    <div class="row demo">
+      <div class="column-8">
+        <div class="row">
+          <div class="column-4">
+            <p>Nam aliquet mollis vehicula. Donec interdum ornare ante quis lacinia.
+            Integer ultrices neque sed ligula hendrerit porttitor. Morbi enim neque,
+            efficitur sed massa nec, facilisis molestie tortor. Aenean ultricies libero
+            eu sollicitudin ultrices. Aenean rhoncus mi in nisl mattis cursus.
+            Suspendisse viverra urna a dui mollis ultricies. Nam nec neque tellus.
+            Phasellus eleifend eu felis et blandit. Maecenas ullamcorper vehicula
+            turpis, iaculis tincidunt odio auctor et. Maecenas consequat neque lorem,
+            nec varius justo rhoncus eu.</p>
+          </div>
+          <div class="column-4">
+            <p>Nam aliquet mollis vehicula. Donec interdum ornare ante quis lacinia.
+            Integer ultrices neque sed ligula hendrerit porttitor. Morbi enim neque,
+            efficitur sed massa nec, facilisis molestie tortor. Aenean ultricies libero
+            eu sollicitudin ultrices. Aenean rhoncus mi in nisl mattis cursus.
+            Suspendisse viverra urna a dui mollis ultricies. Nam nec neque tellus.
+            Phasellus eleifend eu felis et blandit. Maecenas ullamcorper vehicula
+            turpis, iaculis tincidunt odio auctor et. Maecenas consequat neque lorem,
+            nec varius justo rhoncus eu.</p>
+          </div>
+          <div class="column-4">
+            <p>Nam aliquet mollis vehicula. Donec interdum ornare ante quis lacinia.
+            Integer ultrices neque sed ligula hendrerit porttitor. Morbi enim neque,
+            efficitur sed massa nec, facilisis molestie tortor. Aenean ultricies libero
+            eu sollicitudin ultrices. Aenean rhoncus mi in nisl mattis cursus.
+            Suspendisse viverra urna a dui mollis ultricies. Nam nec neque tellus.
+            Phasellus eleifend eu felis et blandit. Maecenas ullamcorper vehicula
+            turpis, iaculis tincidunt odio auctor et. Maecenas consequat neque lorem,
+            nec varius justo rhoncus eu.</p>
+          </div>
+        </div>
+      </div>
+      <div class="column-4">
+        <p>Nam aliquet mollis vehicula. Donec interdum ornare ante quis lacinia.
+        Integer ultrices neque sed ligula hendrerit porttitor. Morbi enim neque,
+        efficitur sed massa nec, facilisis molestie tortor. Aenean ultricies libero
+        eu sollicitudin ultrices. Aenean rhoncus mi in nisl mattis cursus.
+        Suspendisse viverra urna a dui mollis ultricies. Nam nec neque tellus.
+        Phasellus eleifend eu felis et blandit. Maecenas ullamcorper vehicula
+        turpis, iaculis tincidunt odio auctor et. Maecenas consequat neque lorem,
+        nec varius justo rhoncus eu.</p>
+      </div>
+    </div>
+  </div>
+</div>      
+</div>
+
+
+
+  </body>
+
+</html>

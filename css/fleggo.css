@@ -1,0 +1,105 @@
+/* Fleggo - Responsive flexbox based grid system
+ * This system is deisgned to be used two ways:
+ * 1) You can use the classes .row and .column-# in your HTML
+ * 2) You can use the placeholders %row and %column-# in your CSS
+ * The advantadge of using the placeholder method is yu can assign different
+ * column widths based on media queries.
+ * The demo uses the class method */
+/* Fleggo configuration:
+ * $gutter is set in pixels and factored for 1/2 of the gutter width. This is the
+ * amount of margin each column block will get.
+ * $maxWidth is an arbitrary number I picked, but changing it will affect the
+ * width of your gutters if you don't adjust them either.
+ * $columns is the max number of columns.
+ * All values end up  as percentages
+ * $mobileBreak is where the flexboc direction changes from rows to column for
+ * mobile devices. */
+/* Fleggo helper functions */
+.row {
+  display: flex;
+  margin: 0.5rem auto;
+  flex-direction: column;
+  justify-content: center; }
+  @media screen and (min-width: 640px) {
+    .row {
+      flex-direction: row; } }
+
+.column-1 {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 7.5%;
+  margin: 0 0.83333%; }
+
+.column-2 {
+  flex-grow: 2;
+  flex-shrink: 0;
+  flex-basis: 15.83333%;
+  margin: 0 0.83333%; }
+
+.column-3 {
+  flex-grow: 3;
+  flex-shrink: 0;
+  flex-basis: 24.16667%;
+  margin: 0 0.83333%; }
+
+.column-4 {
+  flex-grow: 4;
+  flex-shrink: 0;
+  flex-basis: 32.25%;
+  margin: 0 0.83333%; }
+
+.column-5 {
+  flex-grow: 5;
+  flex-shrink: 0;
+  flex-basis: 40.83333%;
+  margin: 0 0.83333%; }
+
+.column-6 {
+  flex-grow: 6;
+  flex-shrink: 0;
+  flex-basis: 49.16667%;
+  margin: 0 0.83333%; }
+
+.column-7 {
+  flex-grow: 7;
+  flex-shrink: 0;
+  flex-basis: 57.5%;
+  margin: 0 0.83333%; }
+
+.column-8 {
+  flex-grow: 8;
+  flex-shrink: 0;
+  flex-basis: 65.83333%;
+  margin: 0 0.83333%; }
+
+.column-9 {
+  flex-grow: 9;
+  flex-shrink: 0;
+  flex-basis: 74.16667%;
+  margin: 0 0.83333%; }
+
+.column-10 {
+  flex-grow: 10;
+  flex-shrink: 0;
+  flex-basis: 82.5%;
+  margin: 0 0.83333%; }
+
+.column-11 {
+  flex-grow: 11;
+  flex-shrink: 0;
+  flex-basis: 90.83333%;
+  margin: 0 0.83333%; }
+
+.column-12 {
+  flex-grow: 12;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  margin: 0 0; }
+
+[class*="column-"] > *:not(.row) {
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+[class*="column-"] .row {
+  margin: 0;
+  justify-content: space-around; }
+
